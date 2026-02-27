@@ -1,0 +1,25 @@
+name: Deploy to Firebase
+on:
+  push:
+    branches:
+      - main  # This triggers the deploy whenever you push to the 'main' branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: npm install  # Or 'npm ci' if you have a package-lock.json
+
+      - name: Build Project
+        run: npm run build # Only keep this if your project has a build step (like React/Vue)
+
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

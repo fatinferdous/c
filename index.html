@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>IT Club</title>
+<style>
+body{background:#0f172a;color:white;text-align:center;font-family:Arial;}
+input{display:block;margin:10px auto;padding:10px;width:250px;}
+button{padding:10px 20px;background:#38bdf8;border:none;color:white;}
+.card{margin-top:50px;}
+</style>
+</head>
+<body>
+
+<h1>IT Club Portal</h1>
+
+<div class="card">
+<h2>Register</h2>
+<input type="email" id="regEmail" placeholder="Email">
+<input type="password" id="regPass" placeholder="Password">
+<button onclick="register()">Register</button>
+
+<h2>Login</h2>
+<input type="email" id="logEmail" placeholder="Email">
+<input type="password" id="logPass" placeholder="Password">
+<button onclick="login()">Login</button>
+</div>
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html>
